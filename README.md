@@ -13,3 +13,5 @@ Compile using `dune build`.
 ## References
 
 - [coq in a hurry](https://cel.hal.science/inria-00001173)
+- [Coq en Coq](http://pauillac.inria.fr/~barras/coq_work-eng.html)
+- [Reference Manual](https://coq.inria.fr/doc/V8.20.0/refman/)
