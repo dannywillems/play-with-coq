@@ -7,6 +7,7 @@ opam install coq -y
 
 To use Coq in an interactive environment, use `coqtop`.
 
+To use Coq in VScode: `opam install coq-lsp vscoq-language-server`
 Compile using `dune build`.
 
 ## References
