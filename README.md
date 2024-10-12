@@ -7,6 +7,8 @@ opam install coq -y
 
 To use Coq in an interactive environment, use `coqtop`.
 
+Compile using `dune build`.
+
 ## References
 
 - [coq in a hurry](https://cel.hal.science/inria-00001173)
