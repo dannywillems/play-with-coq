@@ -7,7 +7,7 @@ Check 1::2::3::nil.
 Compute
   map (fun x => x + 2) (1::2::3::nil).
 
-(* Insert n in l in ascending order *)
+(** Insert n in l in ascending order *)
 Fixpoint insert n l :=
   match l with
     | nil => n::nil
@@ -16,6 +16,7 @@ Fixpoint insert n l :=
 
 (* 6. Proving properties of programs on lists *)
 
+(** Count the number of occurences of [n] in the list [l] *)
 Fixpoint count (n : nat) (l : list nat) : nat :=
   match l with
   | nil => 0
