@@ -5,6 +5,7 @@ opam switch create ./ 4.14.2 --no-install
 opam install coq -y
 ```
 
+To use Coq in an interactive environment, use `coqtop`.
 
 ## References
 
