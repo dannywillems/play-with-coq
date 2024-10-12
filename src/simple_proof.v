@@ -54,3 +54,17 @@ Proof.
   reflexivity.
 Qed.
 
+Lemma pred_S_eq: forall n: nat, pred (S n) = n.
+Proof.
+  intros n.
+  simpl.
+  reflexivity.
+Qed.
+
+Lemma pred_S_eq2: forall x y, x = S y -> pred x = y.
+Proof.
+  intros x y H.
+  unfold pred.
+  rewrite H.
+  reflexivity.
+Qed.
