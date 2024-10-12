@@ -97,3 +97,15 @@ Lemma ex1': forall a b c: Prop, a /\ (b /\ c) -> (a /\ b) /\ c.
 Proof.
   tauto.
 Qed.
+
+Lemma ex2: forall a b c d: Prop, (a -> b) /\ (c -> d) -> (a /\ c) -> (b /\ d).
+Proof.
+  intros a b c d H H'.
+  destruct H' as [Ha Hc].
+  destruct H as [Hab Hcd].
+  split.
+  apply Hab.
+  exact Ha.
+  apply Hcd.
+  exact Hc.
+Qed.
