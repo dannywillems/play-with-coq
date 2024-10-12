@@ -14,6 +14,13 @@ Fixpoint insert n l :=
     | h::tl => if n <=? h then n::l else h::(insert n tl)
   end.
 
+(** Sort the list [l] by reinserting in order *)
+Fixpoint sort l :=
+  match l with
+    | nil => nil
+    | h::tl => insert h (sort tl)
+  end.
+
 (* 6. Proving properties of programs on lists *)
 
 (** Count the number of occurences of [n] in the list [l] *)
