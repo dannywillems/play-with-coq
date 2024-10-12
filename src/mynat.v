@@ -20,6 +20,17 @@ Definition is_zero (n: nat) : bool :=
   | S _ => false
   end.
 
+(* Page 27, 28, 29 *)
+Lemma not_is_zero_pred: forall x: nat, is_zero x = false -> S (pred x) = x.
+Proof.
+  intros x.
+  unfold is_zero, Nat.pred.
+  destruct x as [ | p ].
+  discriminate.
+  intros h.
+  reflexivity.
+Qed.
+
 (* Print is_zero. *)
 
 (* Print pred. *)
@@ -81,11 +92,3 @@ Fixpoint evenb (m: nat) : bool :=
 (*   destruct (Main n) as [H _]; apply H; exact ev. *)
 (* Qed. *)
 
-Lemma not_is_zero_pred: forall x: nat, is_zero x = false -> S (pred x) = x.
-Proof.
-  intros x.
-  unfold is_zero, Nat.pred.
-  destruct x as [ | p ].
-  discriminate.
-  reflexivity.
-Qed.
