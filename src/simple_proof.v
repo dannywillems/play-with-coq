@@ -80,3 +80,20 @@ Proof.
   (* omega has been replaced by lia *)
   intros; lia.
 Qed.
+
+(* Exercices page 24 *)
+Lemma ex1: forall a b c: Prop, a /\ (b /\ c) -> (a /\ b) /\ c.
+Proof.
+  intros a b c H.
+  destruct H as [Ha [Hb Hc]].
+  split. (* split the conjunction in two different goals *)
+  split.
+  exact Ha.
+  exact Hb.
+  exact Hc.
+Qed.
+
+Lemma ex1': forall a b c: Prop, a /\ (b /\ c) -> (a /\ b) /\ c.
+Proof.
+  tauto.
+Qed.
