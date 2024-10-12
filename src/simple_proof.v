@@ -70,10 +70,13 @@ Proof.
 Qed.
 
 (* Section 3.4 of Coq in a hurry *)
+(* The book mentions Omega, but it has been replaced by Lia (see
+   https://coq.gitlab.io/zulip-archive/stream/237977-Coq-users/topic/.E2.9C.94.20Troubleshooting.20missing.20Omega.html)
+ *)
+Require Import Lia.
 
-(* Require Import Omega. *)
-
-(* Lemma omega_example: forall f x y, 0 < x -> 0 < f x -> 3 * f x <= 2 * y -> f x <= y. *)
-(* Proof. *)
-(*   intros; omega. *)
-(* Qed. *)
+Lemma omega_example: forall f x y, 0 < x -> 0 < f x -> 3 * f x <= 2 * y -> f x <= y.
+Proof.
+  (* omega has been replaced by lia *)
+  intros; lia.
+Qed.
