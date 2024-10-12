@@ -63,3 +63,21 @@ Require Import ArithRing.
 (*   simpl. *)
 (*   ring. *)
 (* Qed. *)
+
+(* Lemma evenb_p: forall n: nat, evenb n = true <-> exists m: nat, n = 2 * m. *)
+(* Proof. *)
+(*   assert (H: forall n: nat, (evenb n = true -> exists x: nat, n = 2 * x) /\ (evenb (S n) = true -> exists x: nat, S n = 2 * x)). *)
+(*   induction n. *)
+(*   split. *)
+(*   exists 0; ring. *)
+(*   simpl; intros H; discriminate H. *)
+(*   split. *)
+(*   destruct IHn as [_ IHn']; exact IHn'. *)
+(*   simpl evenb; intros H; destruct IHn as [IHn' _]. *)
+(*   assert (H' : exists x, n = 2 * x). *)
+(*   apply IHn'; exact H. *)
+(*   destruct H' as [x q]; exists (x + 1); rewrite q; ring. *)
+(*   destruct (Main n) as [H _]; apply H; exact ev. *)
+(* Qed. *)
+
+
