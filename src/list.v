@@ -7,6 +7,7 @@ Check 1::2::3::nil.
 Compute
   map (fun x => x + 2) (1::2::3::nil).
 
+(* Insert n in l in ascending order *)
 Fixpoint insert n l :=
   match l with
     | nil => n::nil
