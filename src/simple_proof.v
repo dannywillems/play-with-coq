@@ -26,3 +26,10 @@ Proof.
   right; assumption.
   left; assumption.
 Qed.
+
+Lemma example4: 3 <= 5.
+Proof.
+  apply le_S.
+  apply le_S.
+  apply le_n.
+Qed.
