@@ -32,4 +32,5 @@ Fixpoint count (n : nat) (l : list nat) : nat :=
       let r := count n tl in if n =? h then 1 + r else r
   end.
 
+(* Page 31 *)
 (* Lemma insert_incr: forall n l, count n (insert n l) = 1 + count n l. *)
