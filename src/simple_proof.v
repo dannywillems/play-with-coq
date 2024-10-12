@@ -35,3 +35,22 @@ Proof.
   apply le_S.
   apply le_n.
 Qed.
+
+Require Import Arith.
+
+Lemma example5: forall x y: nat, (x + y) * (x + y) = x * x + 2 * x * y + y * y.
+Proof.
+  intros x y.
+  rewrite Nat.mul_add_distr_l.
+  rewrite Nat.mul_add_distr_r.
+  rewrite Nat.mul_add_distr_r.
+  rewrite Nat.add_assoc.
+  rewrite <- Nat.add_assoc with (n := x * x).
+  rewrite <- Nat.mul_comm with (n:=y) (m:=x).
+  rewrite <- (Nat.mul_1_l (y * x)) at 1.
+  rewrite <- Nat.mul_succ_l.
+  rewrite <- Nat.mul_comm with (n:=x) (m:=y).
+  rewrite <- Nat.mul_assoc.
+  reflexivity.
+Qed.
+
