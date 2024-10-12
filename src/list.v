@@ -1,3 +1,5 @@
+(* Arith includes <=?, =?, etc *)
+Require Import Arith.
 Require Import List.
 
 Check 1::2::3::nil.
@@ -5,11 +7,20 @@ Check 1::2::3::nil.
 Compute
   map (fun x => x + 2) (1::2::3::nil).
 
+Fixpoint insert n l :=
+  match l with
+    | nil => n::nil
+    | h::tl => if n <=? h then n::l else h::(insert n tl)
+  end.
+
 (* 6. Proving properties of programs on lists *)
 
 Fixpoint count (n : nat) (l : list nat) : nat :=
   match l with
   | nil => 0
   | h::tl =>
-      let r := count n tl in if Nat.eqb n h then 1 + r else r
+      (* =? is equivalent to Nat.eqb *)
+      let r := count n tl in if n =? h then 1 + r else r
   end.
+
+(* Lemma insert_incr: forall n l, count n (insert n l) = 1 + count n l. *)
