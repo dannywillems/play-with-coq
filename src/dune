@@ -1,4 +1,3 @@
 (coq.theory
  (name simple)
- (modules simple mynat)
-)
+ (modules simple mynat))
