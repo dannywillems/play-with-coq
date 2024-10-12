@@ -68,3 +68,12 @@ Proof.
   rewrite H.
   reflexivity.
 Qed.
+
+(* Section 3.4 of Coq in a hurry *)
+
+(* Require Import Omega. *)
+
+(* Lemma omega_example: forall f x y, 0 < x -> 0 < f x -> 3 * f x <= 2 * y -> f x <= y. *)
+(* Proof. *)
+(*   intros; omega. *)
+(* Qed. *)
