@@ -27,6 +27,8 @@ Proof.
   left; assumption.
 Qed.
 
+(* This example shows how to use other tactics. We use the keyword apply to use
+   a previously demonstrated theorem *)
 Lemma example4: 3 <= 5.
 Proof.
   apply le_S.
