@@ -47,3 +47,8 @@ Fixpoint eval (e: expression) : nat :=
   | Plus e1 e2 => eval e1 + eval e2
   | Times e1 e2 => eval e1 * eval e2
   end.
+
+(** We can also use capital letters for a type *)
+Inductive MyNatural: Set :=
+| Zero: MyNatural
+| Succ: MyNatural -> MyNatural.
